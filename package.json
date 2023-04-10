@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "backend":"cd backend && npm run dev",
-    "frontend":"cd frontend && npm run start",
+    "frontend":"cd frontend && npm run frontend",
     "dev":"concurrently \"npm run backend\" \"npm run frontend\""
   },
-  "author": "",
+  "author": "", 
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.6.0"
