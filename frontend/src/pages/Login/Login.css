@@ -1,0 +1,52 @@
+.login-container {
+  width: 80%;
+  height: 40%;
+  margin: auto;
+}
+.login-container .login-right {
+  width: 50%;
+  float: right;
+}
+.login-container .login-left {
+  width: 49%;
+  float: left;
+  margin-top: 7%;
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container .login-left span {
+  color: rgb(232, 112, 112);
+  cursor: pointer;
+}
+.login-container .login-account {
+  margin-left: 30%;
+}
+
+.login-container input {
+  width: 250px;
+  height: 30px;
+  border-radius: 30px;
+  border: 2px solid rgb(232, 112, 112);
+}
+.login-container .login-inputs {
+  margin-left: 25%;
+}
+.login-btn button {
+  width: 25%;
+  margin-top: 5%;
+  margin-left: 18%;
+  border-radius: 40px;
+  height: 35px;
+  cursor: pointer;
+  background-color: rgb(232, 112, 112);
+  color: white;
+  border: 1px solid white;
+  transition: 0.7s;
+}
+.login-btn button:hover {
+  background-color: rgb(167, 61, 61);
+  transition: 0.7s;
+}

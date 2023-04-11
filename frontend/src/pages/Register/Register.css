@@ -1,0 +1,52 @@
+.register-container {
+  width: 80%;
+  height: 40%;
+  margin: auto;
+}
+.register-container .register-right {
+  width: 50%;
+  float: right;
+}
+.register-container .register-left {
+  width: 49%;
+  float: left;
+  /* text-align: center; */
+}
+.register-container .register-left h2 {
+  text-align: center;
+}
+.register-container .register-left h5 {
+  padding-left: 25%;
+}
+.register-container .register-left span {
+  color: rgb(232, 112, 112);
+  cursor: pointer;
+}
+.register-container .register-left input {
+  width: 250px;
+  height: 30px;
+  border-radius: 30px;
+  border: 2px solid rgb(232, 112, 112);
+}
+.register-container .register-inputs {
+  margin-left: 25%;
+  appearance: none;
+}
+
+.register-container .register-left button {
+  width: 30%;
+  height: 35px;
+  margin-left: 15%;
+  margin-top: 5%;
+  border-radius: 40px;
+  border: 1px solid white;
+  background-color: rgb(247, 70, 70);
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.register-container .register-left button:hover {
+  background-color: rgb(192, 36, 36);
+  transition: 0.7s;
+  font-weight: 200;
+}
