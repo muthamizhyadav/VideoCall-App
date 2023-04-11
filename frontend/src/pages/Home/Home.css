@@ -1,0 +1,40 @@
+.home-container {
+  width: 100%;
+}
+.home-container img {
+  position: absolute;
+  top: 60px;
+  height: 90%;
+}
+.home-container h1 {
+  width: 300px;
+  position: relative;
+  top: 200px;
+  left: 150px;
+  transition: 0.7s;
+}
+.home-container h1:hover {
+  color: rgb(252, 58, 58);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  transition: 0.7s;
+}
+.home-container button {
+  position: relative;
+  left: 200px;
+  top: 211px;
+  width: 113px;
+  height: 33px;
+  border-radius: 40px;
+  font-size: larger;
+  background: #f48484;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.home-container button:hover {
+  background-color: white;
+  color: #f48484;
+  border: 1px solid #f48484;
+  transition: 0.5s;
+}
