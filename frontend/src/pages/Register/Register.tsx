@@ -3,9 +3,11 @@ import NavBar from "../../components/NavBar";
 import Reg from "../../assets/reg.jpg";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
+import { Userregister } from "../../services/Register.sevice";
+import Cookies from "js-cookie";
 function Register() {
   let navigate = useNavigate();
-
   // states
 
   const [userData, setUserdata] = React.useState({
@@ -14,6 +16,13 @@ function Register() {
     email: "",
     number: "",
   });
+
+  // validation states
+
+  const [namevalidator, setNameValidator] = React.useState(false);
+  const [passwordvalidator, setPasswordValidator] = React.useState(false);
+  const [emailvalidator, setemailValidator] = React.useState(false);
+  const [numbervalidator, setnumberValidator] = React.useState(false);
 
   // Login Route
   const LoginRoute = async () => {
@@ -25,13 +34,30 @@ function Register() {
     setUserdata({ ...userData, [e.target.name]: e.target.value });
   };
 
-  const submituserData = ()=>{
-    console.log(userData)
-  }
+  const submituserData = async () => {
+    if (userData.name === "") {
+      setNameValidator(true);
+    } else if (userData.email === "") {
+      setemailValidator(true);
+    } else if (userData.number === "") {
+      setnumberValidator(true);
+    } else if (userData.password === "") {
+      setPasswordValidator(true);
+    } else {
+      await Userregister(userData).then((e: any) => {
+        if (e.status === 200 || e.status === 201) {
+          Cookies.set("token", e.data.tokens.access.token);
+          navigate("/Login");
+        }
+      });
+    }
+  };
 
   return (
     <>
       <NavBar />
+      <Loader />
+
       <div className="register-container">
         <div className="register-right">
           <img src={Reg} alt="" width="100%" />
@@ -42,7 +68,14 @@ function Register() {
             Already a member? <span onClick={LoginRoute}>Login</span>
           </h5>
           <div className="register-inputs">
-            <p>User name</p>
+            <p>
+              User name{" "}
+              {namevalidator ? (
+                <span style={{ color: "red" }}>Enter userName</span>
+              ) : (
+                ""
+              )}
+            </p>
             <input
               type="text"
               required
@@ -51,7 +84,14 @@ function Register() {
               name="name"
               onChange={(e) => Onchange(e)}
             />
-            <p>E- mail</p>
+            <p>
+              E- mail{" "}
+              {emailvalidator ? (
+                <span style={{ color: "red" }}>Enter email</span>
+              ) : (
+                ""
+              )}
+            </p>
             <input
               type="email"
               required
@@ -60,7 +100,14 @@ function Register() {
               name="email"
               onChange={(e) => Onchange(e)}
             />
-            <p>Contact number</p>
+            <p>
+              Contact number{" "}
+              {numbervalidator ? (
+                <span style={{ color: "red" }}>Enter valid contact number</span>
+              ) : (
+                ""
+              )}
+            </p>
             <input
               type="number"
               required
@@ -69,7 +116,14 @@ function Register() {
               name="number"
               onChange={(e) => Onchange(e)}
             />
-            <p>Password</p>
+            <p>
+              Password{" "}
+              {passwordvalidator ? (
+                <span style={{ color: "red" }}>Enter Valid Password</span>
+              ) : (
+                ""
+              )}
+            </p>
             <input
               type="password"
               required
