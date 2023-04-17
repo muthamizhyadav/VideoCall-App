@@ -4,6 +4,8 @@ import "./Login.css";
 import NavBar from "../../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import { UserLogin } from "../../services/Register.sevice";
+import Cookies from "js-cookie";
+
 function Login() {
   let navigate = useNavigate();
 
@@ -27,7 +29,10 @@ function Login() {
       setpasswordValidation(true);
     } else {
       await UserLogin(userLogin).then((e: any) => {
-        console.log(e);
+        if (e.status === 200 || e.status === 201) {
+          Cookies.set("name", e.data.user.name);
+          navigate("/Lobby");
+        }
       });
     }
   };

@@ -3,6 +3,7 @@ import HomePage from "../pages/Home/Home";
 import VideoCall from "../pages/Video/VideoCall";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import Lobby from "../pages/Lobby/Lobby";
 const Pages: routerType[] = [
   {
     title: "home",
@@ -23,6 +24,11 @@ const Pages: routerType[] = [
     title: "Login",
     path: "/Login",
     element: <Login />,
+  },
+  {
+    title: "Lobby",
+    path: "/Lobby",
+    element: <Lobby />,
   },
 ];
 
