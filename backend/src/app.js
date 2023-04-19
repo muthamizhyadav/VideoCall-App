@@ -42,7 +42,6 @@ io.on('connection', (socket) => {
     if (val === -1) {
       users.push({ name: data.name, id: socket.id });
     }
-    console.log(users.length);
     io.emit('users', users);
   });
 

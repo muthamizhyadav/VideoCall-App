@@ -1,14 +1,20 @@
 import React from "react";
 import "./loader.css";
 function Loader(status: any) {
-  status = true;
+  status = false;
   let loader = status;
   return (
-    <div className="loaders">
-      <div className="loader-container">
-        {loader ? <span className="loader"></span> : ""}
-      </div>
-    </div>
+    <>
+      {loader ? (
+        <div className="loaders">
+          <div className="loader-container">
+            <span className="loader"></span>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 }
 

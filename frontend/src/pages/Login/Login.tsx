@@ -31,6 +31,7 @@ function Login() {
       await UserLogin(userLogin).then((e: any) => {
         if (e.status === 200 || e.status === 201) {
           Cookies.set("name", e.data.user.name);
+          Cookies.set("email", e.data.email);
           navigate("/Lobby");
         }
       });
